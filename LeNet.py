@@ -36,14 +36,11 @@ class LeNet(nn.Module):
         
         return x
 
-
 train_ds = MNIST("mnist", train=True, download=True, transform=ToTensor())
 test_ds = MNIST("mnist", train=False, download=True, transform=ToTensor())
 
 train_dl = DataLoader(train_ds, batch_size=64, shuffle=True)
 test_dl = DataLoader(test_ds, batch_size=64)
-
-
 
 # 定义 PyTorch Lightning 模块
 class LeNetMNIST_L(L.LightningModule):
@@ -67,13 +64,11 @@ class LeNetMNIST_L(L.LightningModule):
 # 实例化模型并将其转移到 GPU
 model = LeNetMNIST_L().cuda()
 
-
 # 训练并保存模型
 trainer = L.Trainer(max_epochs=1)
 model = LeNetMNIST_L().cuda()
 trainer.fit(model, train_dl)
 trainer.save_checkpoint("lenet_mnist.pt")
-
 
 def get_prediction(x, model: L.LightningModule):
     model.freeze()  # 冻结模型参数以确保推理时不进行梯度更新
@@ -84,7 +79,6 @@ def get_prediction(x, model: L.LightningModule):
         predicted_class = torch.argmax(probabilities, dim=1) # 选择最大概率的类别：
     return predicted_class, probabilities
 
-
 # 加载模型
 inference_model = LeNetMNIST_L.load_from_checkpoint("lenet_mnist.pt", map_location="cuda")
 inference_model.eval()  # 确保模型处于评估模式
@@ -92,10 +86,8 @@ inference_model.eval()  # 确保模型处于评估模式
 true_y, pred_y = [], []
 for batch in tqdm(iter(test_dl), total=len(test_dl)):
   x, y = batch # 取数据和标签
-  
   x = x.cuda() # 数据转移设备
   y = y.cuda() # 数据转移设备
-
   true_y.extend(y.cpu().numpy())  # 移动到 CPU 并转换为 NumPy 数组
   preds, _ = get_prediction(x, inference_model)
   pred_y.extend(preds.cpu().numpy())  # 移动到 CPU 并转换为 NumPy 数组
@@ -104,7 +96,5 @@ for batch in tqdm(iter(test_dl), total=len(test_dl)):
 true_y_np = np.array(true_y)
 pred_y_np = np.array(pred_y)
 
-
 # 打印分类报告
 print(classification_report(true_y_np, pred_y_np, digits=3))
-
