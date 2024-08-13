@@ -11,8 +11,6 @@ import lightning as L
 from tqdm.autonotebook import tqdm
 from sklearn.metrics import classification_report # 生成分类模型的详细性能评估报告
 
-
-
 model = resnet18(num_classes=10)
 model
 model.conv1 = nn.Conv2d(1, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
@@ -46,7 +44,6 @@ class ResNetMNIST_L(L.LightningModule):
   
 model = ResNetMNIST_L().cuda()
 
-
 # 创建训练器实例，管理训练的整个过程
 trainer = L.Trainer(
     devices=1,
@@ -57,7 +54,6 @@ trainer = L.Trainer(
 trainer.fit(model, train_dl) # 启动训练流程
 
 trainer.save_checkpoint("resnet18_mnist.pt")
-  
   
 def get_prediction(x, model: L.LightningModule): # PyTorch Lightning 框架的一部分
   model.freeze() # prepares model for predicting 
