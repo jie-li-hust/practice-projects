@@ -9,7 +9,8 @@
 - lightning 2.4.0
 
 ## 运行说明
-LeNet.py、ReSNet.py、VGG.py文件可直接运行，输出中包含mnist数据集各类测试精度。vit.py文件可选择训练模式：**python vit.py --mode=train** 和测试模式:**python vit.py --mode=test**。
+LeNet.py、ReSNet.py、VGG.py文件可直接运行，输出中包含mnist数据集各类测试精度。vit.py文件可选择训练模式：**python vit.py --mode=train** 和测试模式:**python vit.py --mode=test**。  
+vit使用了已有模型，vit_1为未使用模型的自定义网络。
 
 ## 结果
 **LeNet：**  
