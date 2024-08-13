@@ -14,5 +14,5 @@ LeNet.py、ReSNet.py、VGG.py文件可直接运行，输出中包含mnist数据�
 ## 结果
 ![LeNet](https://github.com/jie-li-hust/practice-projects/blob/master/image/lenet.png)  
 ![VGG](https://github.com/jie-li-hust/practice-projects/blob/master/image/VGG.png)  
-![ResNet-18](https://github.com/jie-li-hust/practice-projects/blob/master/image/resnet.png)  
+![ResNet-18](image/resnet.png)  
 ![vit](https://github.com/jie-li-hust/practice-projects/blob/master/image/vit.png)  
