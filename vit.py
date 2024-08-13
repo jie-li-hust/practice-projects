@@ -65,8 +65,6 @@ class ViTModel(pl.LightningModule):
         optimizer = optim.Adam(self.parameters(), lr=1e-3)
         return optimizer
 
-
-
 # 数据预处理和加载
 transform = transforms.Compose([
     transforms.Resize((image_size, image_size)),
