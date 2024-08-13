@@ -12,7 +12,11 @@
 LeNet.py、ReSNet.py、VGG.py文件可直接运行，输出中包含mnist数据集各类测试精度。vit.py文件可选择训练模式：**python vit.py --mode=train** 和测试模式:**python vit.py --mode=test**。
 
 ## 结果
+**LeNet：**
 ![LeNet](https://github.com/jie-li-hust/practice-projects/blob/master/image/lenet.png)  
+**VGG：**
 ![VGG](https://github.com/jie-li-hust/practice-projects/blob/master/image/VGG.png)  
+**ResNet：**
 ![ResNet-18](image/resnet.png)  
+**vit：**
 ![vit](https://github.com/jie-li-hust/practice-projects/blob/master/image/vit.png)  
