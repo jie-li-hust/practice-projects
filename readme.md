@@ -12,14 +12,9 @@
 LeNet.py、ReSNet.py、VGG.py文件可直接运行，输出中包含mnist数据集各类测试精度。vit.py文件可选择训练模式：**python vit.py --mode=train** 和测试模式:**python vit.py --mode=test**。  
 vit使用了已有模型，vit_1为未使用模型的自定义网络，vit_2实现了对PatchEmbedding等模块更细致的自定义。
 
-## 结果
-**LeNet：**  
-![LeNet](https://github.com/jie-li-hust/practice-projects/blob/master/image/lenet.png)  
-**VGG：**  
-![VGG](https://github.com/jie-li-hust/practice-projects/blob/master/image/VGG.png)  
-**ResNet：**  
-![ResNet-18](image/resnet.png)  
-**vit：**  
-![vit](https://github.com/jie-li-hust/practice-projects/blob/master/image/vit.png)  
-**vit_1：**
-![vit_1](https://github.com/jie-li-hust/practice-projects/blob/master/image/vit_1.png)
+| 模型  | 一轮训练时长 | 测试集精度 |
+| ------------- | ------------- | ------------- |
+| LeNet  | 13s  | 96.9%  |
+| VGG  | 7min20s  | 99.6%  |
+| ResNet-18  | 27s  | 97.6%  |
+| vit  | 2min40s  | 98.2%  |
